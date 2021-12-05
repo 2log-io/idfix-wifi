@@ -322,7 +322,7 @@ namespace IDFix
 				strncpy( reinterpret_cast<char *>(wifiConfigSTA.sta.ssid),		ssid,		sizeof(wifiConfigSTA.sta.ssid) );
 				strncpy( reinterpret_cast<char *>(wifiConfigSTA.sta.password),	password,	sizeof(wifiConfigSTA.sta.password) );
 
-				result = esp_wifi_set_config(ESP_IF_WIFI_STA, &wifiConfigSTA);
+				result = esp_wifi_set_config(WIFI_IF_STA, &wifiConfigSTA);
 				if ( result != ESP_OK )
 				{
 					ESP_LOGE(LOG_TAG, "connectWPA: esp_wifi_set_config failed: %u", result);
@@ -428,7 +428,7 @@ namespace IDFix
 					return false;
 				}
 
-				result = esp_wifi_set_config(ESP_IF_WIFI_AP, &wifiConfigAP);
+				result = esp_wifi_set_config(WIFI_IF_AP, &wifiConfigAP);
 				if ( result != ESP_OK )
 				{
 					ESP_LOGE(LOG_TAG, "startAP: esp_wifi_set_config failed: %u", result);

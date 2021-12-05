@@ -26,7 +26,8 @@ idf_component_register(
 	REQUIRES idfix-core esp_netif esp_wifi idfix-protocols lwip  json esp_http_client
 )
 
-component_compile_options(-std=c++17)
+component_compile_options(-std=gnu++17)
+#component_compile_options(-std=gnu++17)
 
 else()
 
